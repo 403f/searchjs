@@ -114,9 +114,10 @@ ExtendArray:findData( Object:Data )
 3.
 .where( Object: wh ) the params of wh such as:{title:/\d$/,'id':['>':1],'name':'author'}
 It support RegExp, String, Number, Boolean, The arithmetic operator:<,<=,>=,=,>
-```
+
 4.
 .orderBy(String:inx,String:dict) the params of dict is between 'desc' and 'asc',the inx is the field of data,such as: ('name','desc')
+```
 
 # extend
 
