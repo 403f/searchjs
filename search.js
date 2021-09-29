@@ -45,7 +45,7 @@
             },
 
             'lastNoDel': function() {
-                if (msgs.length < 0) {
+                if (msgs.length <= 0) {
                     return emptyMsg;
                 }
 
