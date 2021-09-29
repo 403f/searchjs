@@ -1,5 +1,5 @@
 # searchjs
-So short! So powerful! So flexible! You can use the library to filter data easily. And it's very flexible,You can design the chain style which you want.And it's robust,you can change the order of chain-unction as well it's not get error.
+So short! So powerful! So flexible! You can use the library to filter data easily. And it's very flexible,You can design the chain style which you want.And it's robust,you can change the order of chain-unction as well as no error.
 
 # example
 ```
