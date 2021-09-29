@@ -272,7 +272,7 @@
                     'value': function(...argu) {
                         if (methodName != 'run') {
 
-                            let hasSeq = typeof argu[0] == 'boolean' ? argu[0] : false;
+                            let hasSeq = typeof argu[argu.length - 1] == 'boolean' ? argu[argu.length - 1] : false;
                             let tmp_argu = JSON.parse(JSON.stringify(argu));
                             if (!hasSeq) {
                                 hash.formatObj(tmp_argu);
