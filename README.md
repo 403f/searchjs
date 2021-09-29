@@ -12,10 +12,10 @@ var data = [
 ];
 
 var result = findData(data)
-      .filter(true,
+      .filter(
         [
 	  'userId','title',
-      ])
+      ],true)
       .where({
 	'userId':[
 	'>=',11
