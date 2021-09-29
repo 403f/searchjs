@@ -255,12 +255,15 @@
             let run = function() {
                 that.result.clear();
                 share_data = null;
+
                 for (let i = 0; i < origin.length; i++) {
                     share_data = origin[i];
                     for (let j = that.runStack.length - 1; j >= 0; j--) {
+
                         that.runStack[j]();
                     }
                 }
+
                 origin = JSON.parse(JSON.stringify(that.result));
             };
 
@@ -280,6 +283,7 @@
                             if (hadRun.indexOf(ky) < 0) {
                                 that[methodName](...argu);
                                 run();
+                                that.runStack.shift();
                                 hadRun.push(ky);
                             }
 
@@ -325,6 +329,7 @@
                         }
                     }
                     cur_data_wrapper.data = tmp;
+
                     return tmp;
                 },
                 'configurable': false,
@@ -371,11 +376,9 @@
                 }
 
                 let that = this;
-
                 this.runStack.unshift(function() {
                     let data = null;
                     data = that.result.pop();
-
                     if (typeof wh != 'object') {
                         //debug
                         Log.fire('find.sql.where.runStackFunction', 'error', 'the where syntax was error');
@@ -500,14 +503,22 @@
 
             'filter': function(fields) {
                 if (!Array.isArray(fields)) {
+                    Log.fire('sql.fields', 'error', 'the fields must be array');
                     return;
                 }
                 let that = this;
+                let check = true;
                 fields.forEach(function(field) {
                     if (that.inxs.indexOf(field) < 0) {
-                        return;
+                        check = false;
                     }
                 });
+
+                if (check == false) {
+                    Log.fire("sql.fields','error','the fields are not match the data's fields");
+                    return;
+                }
+
                 this.runStack.unshift(function() {
                     let data = that.result.pop();
                     let tmp_data = {};
