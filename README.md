@@ -12,18 +12,19 @@ var data = [
 ];
 
 var result = findData(data)
-      .filter(true,[
-				'userId','title',
-			])
+      .filter(true,
+        [
+	  'userId','title',
+      ])
       .where({
-				'userId':[
-					'>=',11
-				]
-			})
+	'userId':[
+	'>=',11
+	]
+       })
       .orderBy('userId','desc');
 			
 for(let i = 0; i < result.length; i++) {
-		//Log.fire('none','accept',JSON.stringify(result[i]));
+    //Log.fire('none','accept',JSON.stringify(result[i]));
     console.log(result[i]);
 }
 ```
@@ -41,17 +42,17 @@ var data = [
 
 var result = findData(data)
       .filter(true,[
-				'userId','title',
-			])
+	'userId','title',
+      ])
       .orderBy('userId','desc')
       .where({
-				'userId':[
-					'>=',11
-				]
-			});
+	'userId':[
+	    '>=',11
+	]
+       });
 			
 for(let i = 0; i < result.length; i++) {
-		//Log.fire('none','accept',JSON.stringify(result[i]));
+    //Log.fire('none','accept',JSON.stringify(result[i]));
     console.log(result[i]);
 }
 ```
@@ -67,13 +68,12 @@ var data = [
 
 var result = findData(data)
       .filter(true,[
-				'userId','title',
-			])
-      .orderBy('userId','desc')
-      ;
+	'userId','title',
+      ])
+      .orderBy('userId','desc');
 			
 for(let i = 0; i < result.length; i++) {
-		//Log.fire('none','accept',JSON.stringify(result[i]));
+    //Log.fire('none','accept',JSON.stringify(result[i]));
     console.log(result[i]);
 }
 ```
@@ -88,16 +88,16 @@ var data = [
 
 var result = findData(data)
       .filter(true,[
-				'userId','title',
-			])
+	'userId','title',
+       ])
       .where({
-				'userId':[
-					'>=',11
+	'userId':[
+	    '>=',11
 				]
-			});
+       });
 			
 for(let i = 0; i < result.length; i++) {
-		//Log.fire('none','accept',JSON.stringify(result[i]));
+    //Log.fire('none','accept',JSON.stringify(result[i]));
     console.log(result[i]);
 }
 ```
