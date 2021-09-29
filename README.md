@@ -1,7 +1,7 @@
 # searchjs
 So short! So powerful! So flexible! You can use the library to filter data easily. And it's very flexible,You can design the chain style which you want.And it's robust,you can change the order of chain-unction as well it's not get error.
 
-#example
+# example
 ```
 <script src="./search.js"></script>
 var data = [
@@ -102,6 +102,6 @@ for(let i = 0; i < result.length; i++) {
 }
 ```
 
-#extend
+# extend
 
 if you want to extend the function of the library,you must know the principle of the thought of this library. Just take the script as a factory,but this factory handle the data which is given by user.Every filter-function like a worker of this factory,they display different roles,but they handle the same data in order position.So the parameter ‘share_data’ is shared by the worker. And the worker use  'this.result.pop()' to get the share_data by pipline.And the worker use 'this.result.push()' to pass the share_data to the next worker.So if you want to extend a function to this library of script is just like employing a mew worker,and you can put it in any position of the pipline. 
