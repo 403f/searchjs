@@ -41,9 +41,9 @@ var data = [
 ];
 
 var result = findData(data)
-      .filter(true,[
+      .filter([
 	'userId','title',
-      ])
+      ],true)
       .orderBy('userId','desc')
       .where({
 	'userId':[
@@ -67,9 +67,9 @@ var data = [
 ];
 
 var result = findData(data)
-      .filter(true,[
+      .filter([
 	'userId','title',
-      ])
+      ],true)
       .orderBy('userId','desc');
 			
 for(let i = 0; i < result.length; i++) {
@@ -87,9 +87,9 @@ var data = [
 ];
 
 var result = findData(data)
-      .filter(true,[
+      .filter([
 	'userId','title',
-       ])
+       ],true)
       .where({
 	'userId':[
 	    '>=',11
@@ -101,6 +101,22 @@ for(let i = 0; i < result.length; i++) {
     console.log(result[i]);
 }
 ```
+# API
+```
+usage:
+1.
+`
+ExtendArray:findData( Object:Data )
+`
+2.
+.filter( Array:fields ) the params of fields such as: ['name','id']
+
+3.
+.where( Object: wh ) the params of wh such as:{title:/\d$/,'id':['>':1],'name':'author'}
+It support RegExp, String, Number, Boolean, The arithmetic operator:<,<=,>=,=,>
+```
+4.
+.orderBy(String:inx,String:dict) the params of dict is between 'desc' and 'asc',the inx is the field of data,such as: ('name','desc')
 
 # extend
 
